@@ -1,4 +1,4 @@
-package io.hexlet.schemas;
+package hexlet.code.schemas;
 
 import java.util.Map;
 import java.util.function.Function;

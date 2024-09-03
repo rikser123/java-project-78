@@ -1,8 +1,8 @@
-package io.hexlet;
+package hexlet.code;
 
-import io.hexlet.schemas.MapSchema;
-import io.hexlet.schemas.NumberSchema;
-import io.hexlet.schemas.StringSchemas;
+import hexlet.code.schemas.NumberSchema;
+import hexlet.code.schemas.MapSchema;
+import hexlet.code.schemas.StringSchemas;
 
 import java.util.Map;
 import java.util.function.Function;
