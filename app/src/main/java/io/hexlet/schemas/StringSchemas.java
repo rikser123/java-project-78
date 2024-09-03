@@ -3,11 +3,10 @@ package io.hexlet.schemas;
 import java.util.function.Function;
 import java.util.Map;
 
-public class StringSchemas {
-    private Map<String, Function<String, Boolean>> validators;
+public class StringSchemas extends BaseSchema<String> {
 
     public StringSchemas(Map<String, Function<String, Boolean>> validators) {
-        this.validators = validators;
+        super(validators);
     }
 
     public StringSchemas required() {
@@ -29,18 +28,5 @@ public class StringSchemas {
         validators.put("contains", validator);
 
         return new StringSchemas(validators);
-    }
-
-    public boolean isValid(String value) {
-        var isValid = true;
-        var validationFuncs = validators.values();
-
-        for (var validator : validationFuncs) {
-            if (!validator.apply((value))) {
-                isValid = false;
-            }
-        }
-
-        return isValid;
     }
 }
