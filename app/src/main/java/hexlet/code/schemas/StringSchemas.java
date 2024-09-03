@@ -1,9 +1,9 @@
-package io.hexlet.schemas;
+package hexlet.code.schemas;
 
 import java.util.function.Function;
 import java.util.Map;
 
-public class StringSchemas extends BaseSchema<String> {
+public final class StringSchemas extends BaseSchema<String> {
 
     public StringSchemas(Map<String, Function<String, Boolean>> validators) {
         super(validators);
@@ -17,7 +17,12 @@ public class StringSchemas extends BaseSchema<String> {
     }
 
     public StringSchemas minLength(Integer length) {
-        Function<String, Boolean> validator = value -> value.length() >= length;
+        Function<String, Boolean> validator = value -> {
+            if (value == null) {
+                return false;
+            }
+            return value.length() >= length;
+        };
         validators.put("minLength", validator);
 
         return new StringSchemas(validators);

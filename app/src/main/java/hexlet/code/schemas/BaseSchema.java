@@ -1,4 +1,4 @@
-package io.hexlet.schemas;
+package hexlet.code.schemas;
 
 import java.util.Map;
 import java.util.function.Function;
@@ -6,11 +6,11 @@ import java.util.function.Function;
 public class BaseSchema<T> {
     protected Map<String, Function<T, Boolean>> validators;
 
-    public BaseSchema(Map<String, Function<T, Boolean>> validators) {
-        this.validators = validators;
+    public BaseSchema(Map<String, Function<T, Boolean>> validatorsName) {
+        this.validators = validatorsName;
     }
 
-    public boolean isValid(T value) {
+    public final boolean isValid(T value) {
         var isValid = true;
         var validationFuncs = validators.values();
 

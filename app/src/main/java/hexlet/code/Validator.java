@@ -1,14 +1,14 @@
-package io.hexlet;
+package hexlet.code;
 
-import io.hexlet.schemas.MapSchema;
-import io.hexlet.schemas.NumberSchema;
-import io.hexlet.schemas.StringSchemas;
+import hexlet.code.schemas.NumberSchema;
+import hexlet.code.schemas.MapSchema;
+import hexlet.code.schemas.StringSchemas;
 
 import java.util.Map;
 import java.util.function.Function;
 import java.util.HashMap;
 
-public class Validator {
+public final class Validator {
     public StringSchemas string() {
         var validators = new HashMap<String, Function<String, Boolean>>();
         return new StringSchemas(validators);

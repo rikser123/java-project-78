@@ -1,9 +1,9 @@
-package io.hexlet.schemas;
+package hexlet.code.schemas;
 
 import java.util.Map;
 import java.util.function.Function;
 
-public class NumberSchema extends BaseSchema<Integer> {
+public final class NumberSchema extends BaseSchema<Integer> {
     public NumberSchema(Map<String, Function<Integer, Boolean>> validators) {
         super(validators);
     }
